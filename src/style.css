@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+/*
+  Tailwind v4 defaults to @media(prefers-color-scheme) for the `dark:` variant.
+  Override it to use the `.dark` class on <html> instead, so our JS toggle works.
+*/
+@variant dark (&:is(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  background-color: #f8fafc;
+}
+.dark body {
+  background-color: #020617;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 9999px; }
+
+.gradient-text {
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* ── Animated hero gradient ──────────────────────────────────────────────────
+   Light mode: soft indigo/sky wash over white so text stays readable.
+   Dark mode : deep slate/navy so the white text pops.
+   Both share the same animation keyframe.
+*/
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+/* Light-mode default */
+.animated-gradient {
+  background: linear-gradient(-45deg, #e0e7ff, #dbeafe, #e0f2fe, #ede9fe);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  transition: background 0.5s ease;
+}
+
+/* Dark-mode override — kicks in the moment .dark is on <html> */
+.dark .animated-gradient {
+  background: linear-gradient(-45deg, #0f172a, #1e1b4b, #0c4a6e, #0f172a);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* ── Misc animations ─────────────────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-20px); }
+}
+.float-anim { animation: float 6s ease-in-out infinite; }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.cursor-blink { animation: blink 1s step-end infinite; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up { animation: fadeInUp 0.7s ease forwards; }
+
+@keyframes particleFloat {
+  0%, 100% { transform: translateY(0)    translateX(0)   rotate(0deg);   opacity: 0.2; }
+  33%       { transform: translateY(-40px) translateX(15px) rotate(120deg); opacity: 0.6; }
+  66%       { transform: translateY(20px)  translateX(-15px) rotate(240deg); opacity: 0.3; }
+}
+
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+.card-shine::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  transition: left 0.5s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.card-shine:hover::before { left: 150%; }
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.spin-slow { animation: spin-slow 20s linear infinite; }
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(99,102,241,0.3); }
+  50%       { box-shadow: 0 0 40px rgba(99,102,241,0.6), 0 0 60px rgba(34,211,238,0.2); }
+}
+.pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+.section-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.section-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

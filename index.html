@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MD. Dulal Hossin — Frontend Team Lead & Vue.js Specialist with 6+ years of experience building high-performance web applications." />
+    <meta name="keywords" content="Vue.js, Frontend Developer, Team Lead, JavaScript, Tailwind CSS, Portfolio" />
+    <meta property="og:title" content="MD. Dulal Hossin — Frontend Team Lead" />
+    <meta property="og:description" content="6+ years Vue.js specialist. Building scalable, elegant web applications with modern tooling." />
+    <title>MD. Dulal Hossin | Frontend Team Lead</title>
+
+    <!--
+      Inline theme script — runs synchronously before the browser paints anything.
+      This eliminates any flash of the wrong theme on reload.
+      Default is dark when no preference is stored.
+    -->
+    <script>
+      ;(function () {
+        var stored = localStorage.getItem('theme')
+        var dark = stored ? stored === 'dark' : true
+        if (dark) {
+          document.documentElement.classList.add('dark')
+        } else {
+          document.documentElement.classList.remove('dark')
+        }
+      })()
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
