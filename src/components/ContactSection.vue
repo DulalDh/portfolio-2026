@@ -70,6 +70,7 @@
                   v-model="form.name"
                   type="text"
                   placeholder="John Doe"
+                  @input="errors.name = ''"
                   :class="['w-full px-4 py-3 dark:bg-slate-700/60 bg-white border rounded-xl dark:text-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-1 transition-all duration-200',
                     errors.name ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'dark:border-slate-600 border-slate-300 focus:border-indigo-500 focus:ring-indigo-500']"
                 />
@@ -81,6 +82,7 @@
                   v-model="form.email"
                   type="email"
                   placeholder="john@example.com"
+                  @input="errors.email = ''"
                   :class="['w-full px-4 py-3 dark:bg-slate-700/60 bg-white border rounded-xl dark:text-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-1 transition-all duration-200',
                     errors.email ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'dark:border-slate-600 border-slate-300 focus:border-indigo-500 focus:ring-indigo-500']"
                 />
@@ -94,6 +96,7 @@
                 v-model="form.subject"
                 type="text"
                 placeholder="Project Inquiry / Job Opportunity"
+                @input="errors.subject = ''"
                 :class="['w-full px-4 py-3 dark:bg-slate-700/60 bg-white border rounded-xl dark:text-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-1 transition-all duration-200',
                   errors.subject ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'dark:border-slate-600 border-slate-300 focus:border-indigo-500 focus:ring-indigo-500']"
               />
@@ -106,6 +109,7 @@
                 v-model="form.message"
                 rows="5"
                 placeholder="Tell me about your project or opportunity..."
+                @input="errors.message = ''"
                 :class="['w-full px-4 py-3 dark:bg-slate-700/60 bg-white border rounded-xl dark:text-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-1 transition-all duration-200 resize-none',
                   errors.message ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'dark:border-slate-600 border-slate-300 focus:border-indigo-500 focus:ring-indigo-500']"
               />
