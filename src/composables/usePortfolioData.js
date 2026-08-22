@@ -2,8 +2,26 @@ import { ref } from 'vue'
 import { ref as dbRef, get } from 'firebase/database'
 import { db } from '../firebase'
 
-export const skillCategories = ['All', 'Frontend', 'Backend', 'Testing', 'DevOps']
-export const projectCategories = ['All', 'Enterprise', 'FinTech', 'E-commerce', 'EdTech']
+// local (camelCase) state key -> [firebase path (snake_case), defaultValue]
+const FIELDS = {
+  personal: ['personal', null],
+  education: ['education', null],
+  skills: ['skills', []],
+  skillCategories: ['skill_categories', []],
+  experiences: ['experiences', []],
+  projects: ['projects', []],
+  projectCategories: ['project_categories', []],
+  achievements: ['achievements', []],
+  stats: ['stats', []],
+  navLinks: ['nav_links', []],
+  socialLinks: ['social_links', []],
+  footerTagline: ['footer_tagline', ''],
+  heroTagline: ['hero_tagline', ''],
+  resumeUrl: ['resume_url', ''],
+  aboutInfo: ['about_info', []],
+  aboutTags: ['about_tags', []],
+  techStack: ['tech_stack', []],
+}
 
 let cached = null
 
@@ -13,13 +31,11 @@ export function usePortfolioData() {
 }
 
 function load() {
-  const personal = ref(null)
-  const education = ref(null)
-  const skills = ref([])
-  const experiences = ref([])
-  const projects = ref([])
-  const achievements = ref([])
-  const stats = ref([])
+  const state = {}
+  for (const key of Object.keys(FIELDS)) {
+    const [, defaultValue] = FIELDS[key]
+    state[key] = ref(defaultValue)
+  }
   const loading = ref(true)
   const error = ref(null)
 
@@ -27,24 +43,11 @@ function load() {
 
   ;(async () => {
     try {
-      const [personalData, educationData, skillsData, experiencesData, projectsData, achievementsData, statsData] =
-        await Promise.all([
-          fetchPath('personal'),
-          fetchPath('education'),
-          fetchPath('skills'),
-          fetchPath('experiences'),
-          fetchPath('projects'),
-          fetchPath('achievements'),
-          fetchPath('stats'),
-        ])
-
-      personal.value = personalData ?? null
-      education.value = educationData ?? null
-      skills.value = skillsData ?? []
-      experiences.value = experiencesData ?? []
-      projects.value = projectsData ?? []
-      achievements.value = achievementsData ?? []
-      stats.value = statsData ?? []
+      const keys = Object.keys(FIELDS)
+      const results = await Promise.all(keys.map((key) => fetchPath(FIELDS[key][0])))
+      keys.forEach((key, i) => {
+        state[key].value = results[i] ?? FIELDS[key][1]
+      })
     } catch (e) {
       error.value = e
     } finally {
@@ -52,5 +55,5 @@ function load() {
     }
   })()
 
-  return { personal, education, skills, experiences, projects, achievements, stats, loading, error }
+  return { ...state, loading, error }
 }

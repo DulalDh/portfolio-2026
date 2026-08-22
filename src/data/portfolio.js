@@ -181,3 +181,51 @@ export const stats = [
   { value: '50%', label: 'Faster Delivery' },
   { value: '40%', label: 'Fewer Bugs' },
 ]
+
+export const navLinks = [
+  { label: 'About',      href: '#about' },
+  { label: 'Skills',     href: '#skills' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Projects',   href: '#projects' },
+  { label: 'Contact',    href: '#contact' },
+]
+
+export const socialLinks = [
+  { label: 'GitHub', icon: '🐙', href: personal.github },
+  { label: 'LinkedIn', icon: '💼', href: personal.linkedin },
+  { label: 'Email', icon: '✉️', href: `mailto:${personal.email}` },
+]
+
+export const footerTagline = 'Frontend Team Lead specializing in Vue.js. Building scalable, high-performance web applications with modern tooling.'
+
+export const heroTagline = '6+ years crafting high-performance Vue.js applications. Team lead who turns complex problems into elegant, automated solutions.'
+
+export const resumeUrl = 'https://docs.google.com/document/d/14IVCB4fYXiCWtjZge3u18209w2D3yWUBY2_mGHTd10E/export?format=pdf'
+
+export const aboutInfo = [
+  { icon: '📍', label: 'Location', value: personal.location },
+  { icon: '✉️', label: 'Email',    value: personal.email },
+  { icon: '📱', label: 'Phone',    value: personal.phone },
+  { icon: '🎓', label: 'Degree',   value: 'BSc in CSE — HSTU' },
+]
+
+export const aboutTags = [
+  'Vue 3 Expert', 'Team Leadership', 'CI/CD Automation',
+  'Playwright Testing', 'Agile/Scrum', 'Performance Optimization',
+  'Code Review', 'Mentorship',
+]
+
+export const techStack = [
+  { name: 'Vue 3', icon: '⚡' },
+  { name: 'JavaScript', icon: '🟨' },
+  { name: 'TypeScript', icon: '🔷' },
+  { name: 'Tailwind', icon: '🎨' },
+  { name: 'Nuxt.js', icon: '🚀' },
+  { name: 'Pinia', icon: '🍍' },
+  { name: 'Vite', icon: '⚡' },
+  { name: 'Playwright', icon: '🎭' },
+  { name: 'Git', icon: '🌿' },
+  { name: 'REST API', icon: '🔗' },
+  { name: 'Claude AI', icon: '🤖' },
+  { name: 'VS Code', icon: '💻' },
+]

@@ -129,18 +129,12 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useTheme } from '../composables/useTheme'
+import { usePortfolioData } from '../composables/usePortfolioData'
 
+const { navLinks: navItems } = usePortfolioData()
 const { isDark, toggleTheme } = useTheme()
 const scrolled = ref(false)
 const menuOpen = ref(false)
-
-const navItems = [
-  { label: 'About',      href: '#about' },
-  { label: 'Skills',     href: '#skills' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects',   href: '#projects' },
-  { label: 'Contact',    href: '#contact' },
-]
 
 function onScroll() {
   scrolled.value = window.scrollY > 50

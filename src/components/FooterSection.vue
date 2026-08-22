@@ -8,10 +8,10 @@
             <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-400 flex items-center justify-center font-black text-white">
               DH
             </div>
-            <span class="font-black dark:text-white text-slate-900 text-lg">MD. Dulal Hossin</span>
+            <span class="font-black dark:text-white text-slate-900 text-lg">{{ personal?.name }}</span>
           </div>
           <p class="dark:text-slate-400 text-slate-500 text-sm leading-relaxed">
-            Frontend Team Lead specializing in Vue.js. Building scalable, high-performance web applications with modern tooling.
+            {{ footerTagline }}
           </p>
         </div>
 
@@ -34,9 +34,9 @@
         <div>
           <h4 class="dark:text-white text-slate-900 font-bold mb-4 text-sm uppercase tracking-wider">Contact</h4>
           <div class="space-y-2 text-sm dark:text-slate-400 text-slate-500">
-            <div>✉️ <a href="mailto:dulaldh.cse@gmail.com" class="hover:text-indigo-400 transition-colors">dulaldh.cse@gmail.com</a></div>
-            <div>📱 +880 1751-341563</div>
-            <div>📍 Savar, Dhaka, Bangladesh</div>
+            <div>✉️ <a :href="`mailto:${personal?.email}`" class="hover:text-indigo-400 transition-colors">{{ personal?.email }}</a></div>
+            <div>📱 {{ personal?.phone }}</div>
+            <div>📍 {{ personal?.location }}</div>
           </div>
           <div class="flex gap-3 mt-5">
             <a
@@ -59,26 +59,16 @@
 
       <!-- Bottom bar -->
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm dark:text-slate-500 text-slate-400">
-        <span>© {{ year }} MD. Dulal Hossin. All rights reserved.</span>
+        <span>© {{ year }} {{ personal?.name }}. All rights reserved.</span>
       </div>
     </div>
   </footer>
 </template>
 
 <script setup>
+import { usePortfolioData } from '../composables/usePortfolioData'
+
+const { personal, navLinks: links, socialLinks: socials, footerTagline } = usePortfolioData()
+
 const year = new Date().getFullYear()
-
-const links = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
-]
-
-const socials = [
-  { label: 'GitHub', icon: '🐙', href: 'https://github.com/DulalDh' },
-  { label: 'LinkedIn', icon: '💼', href: 'https://www.linkedin.com/in/DulalDh' },
-  { label: 'Email', icon: '✉️', href: 'mailto:dulaldh.cse@gmail.com' },
-]
 </script>

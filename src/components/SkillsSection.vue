@@ -89,10 +89,10 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import { usePortfolioData, skillCategories } from '../composables/usePortfolioData'
+import { usePortfolioData } from '../composables/usePortfolioData'
 import LoadingSpinner from './LoadingSpinner.vue'
 
-const { skills: allSkills, loading, error } = usePortfolioData()
+const { skills: allSkills, skillCategories, techStack, loading, error } = usePortfolioData()
 
 const activeCategory = ref('All')
 
@@ -106,21 +106,6 @@ const filteredSkills = computed(() =>
     ? allSkills.value
     : allSkills.value.filter(s => s.category === activeCategory.value)
 )
-
-const techStack = [
-  { name: 'Vue 3', icon: '⚡' },
-  { name: 'JavaScript', icon: '🟨' },
-  { name: 'TypeScript', icon: '🔷' },
-  { name: 'Tailwind', icon: '🎨' },
-  { name: 'Nuxt.js', icon: '🚀' },
-  { name: 'Pinia', icon: '🍍' },
-  { name: 'Vite', icon: '⚡' },
-  { name: 'Playwright', icon: '🎭' },
-  { name: 'Git', icon: '🌿' },
-  { name: 'REST API', icon: '🔗' },
-  { name: 'Claude AI', icon: '🤖' },
-  { name: 'VS Code', icon: '💻' },
-]
 
 onMounted(() => {
   const observer = new IntersectionObserver(

@@ -14,11 +14,21 @@ import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'fire
 import {
   personal,
   skills,
+  skillCategories,
   experiences,
   projects,
+  projectCategories,
   education,
   achievements,
   stats,
+  navLinks,
+  socialLinks,
+  footerTagline,
+  heroTagline,
+  resumeUrl,
+  aboutInfo,
+  aboutTags,
+  techStack,
 } from '../src/data/portfolio.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -53,10 +63,20 @@ async function main() {
   await set(dbRef(db, 'personal'), { ...personal, photoUrl })
   await set(dbRef(db, 'education'), education)
   await set(dbRef(db, 'skills'), skills)
+  await set(dbRef(db, 'skill_categories'), skillCategories)
   await set(dbRef(db, 'experiences'), experiences)
   await set(dbRef(db, 'projects'), projects)
+  await set(dbRef(db, 'project_categories'), projectCategories)
   await set(dbRef(db, 'achievements'), achievements)
   await set(dbRef(db, 'stats'), stats)
+  await set(dbRef(db, 'nav_links'), navLinks)
+  await set(dbRef(db, 'social_links'), socialLinks)
+  await set(dbRef(db, 'footer_tagline'), footerTagline)
+  await set(dbRef(db, 'hero_tagline'), heroTagline)
+  await set(dbRef(db, 'resume_url'), resumeUrl)
+  await set(dbRef(db, 'about_info'), aboutInfo)
+  await set(dbRef(db, 'about_tags'), aboutTags)
+  await set(dbRef(db, 'tech_stack'), techStack)
 
   console.log('Done.')
   process.exit(0)

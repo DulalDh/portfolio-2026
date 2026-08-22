@@ -59,7 +59,7 @@
             class="dark:text-slate-400 text-slate-600 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 mb-7 sm:mb-9 leading-relaxed fade-in-up"
             style="animation-delay:0.3s"
           >
-            6+ years crafting high-performance Vue.js applications. Team lead who turns complex problems into elegant, automated solutions.
+            {{ heroTagline }}
           </p>
 
           <!-- CTAs -->
@@ -194,7 +194,7 @@ import { computed } from 'vue'
 import { useTypewriter } from '../composables/useTypewriter'
 import { usePortfolioData } from '../composables/usePortfolioData'
 
-const { personal, stats } = usePortfolioData()
+const { personal, stats, heroTagline } = usePortfolioData()
 
 const typingPhrases = computed(() => personal.value?.typingPhrases ?? [])
 const { displayText } = useTypewriter(typingPhrases)

@@ -94,10 +94,10 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { usePortfolioData, projectCategories } from '../composables/usePortfolioData'
+import { usePortfolioData } from '../composables/usePortfolioData'
 import LoadingSpinner from './LoadingSpinner.vue'
 
-const { projects, loading, error } = usePortfolioData()
+const { projects, projectCategories, loading, error } = usePortfolioData()
 
 const activeFilter = ref('All')
 

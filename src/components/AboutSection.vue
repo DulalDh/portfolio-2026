@@ -118,7 +118,7 @@
 
           <!-- Download -->
           <a
-            href="https://docs.google.com/document/d/14IVCB4fYXiCWtjZge3u18209w2D3yWUBY2_mGHTd10E/export?format=pdf"
+            :href="resumeUrl"
             target="_blank"
             rel="noopener noreferrer"
             download="Dulal_Hossin_Resume.pdf"
@@ -140,18 +140,5 @@
 import { usePortfolioData } from '../composables/usePortfolioData'
 import LoadingSpinner from './LoadingSpinner.vue'
 
-const { personal, loading, error } = usePortfolioData()
-
-const infos = [
-  { icon: '📍', label: 'Location', value: 'Savar, Dhaka, Bangladesh' },
-  { icon: '✉️', label: 'Email',    value: 'dulaldh.cse@gmail.com' },
-  { icon: '📱', label: 'Phone',    value: '+880 1751-341563' },
-  { icon: '🎓', label: 'Degree',   value: 'BSc in CSE — HSTU' },
-]
-
-const tags = [
-  'Vue 3 Expert', 'Team Leadership', 'CI/CD Automation',
-  'Playwright Testing', 'Agile/Scrum', 'Performance Optimization',
-  'Code Review', 'Mentorship',
-]
+const { personal, aboutInfo: infos, aboutTags: tags, resumeUrl, loading, error } = usePortfolioData()
 </script>
