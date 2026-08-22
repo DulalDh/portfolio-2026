@@ -1,12 +1,13 @@
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, unref, watch, onMounted, onUnmounted } from 'vue'
 
-export function useTypewriter(phrases, { typeSpeed = 80, deleteSpeed = 50, pauseDuration = 2000 } = {}) {
+export function useTypewriter(phrasesSource, { typeSpeed = 80, deleteSpeed = 50, pauseDuration = 2000 } = {}) {
   const displayText = ref('')
   const isDeleting = ref(false)
   const phraseIndex = ref(0)
   let timeout = null
 
   function type() {
+    const phrases = unref(phrasesSource)
     const current = phrases[phraseIndex.value]
 
     if (!isDeleting.value) {
@@ -26,7 +27,18 @@ export function useTypewriter(phrases, { typeSpeed = 80, deleteSpeed = 50, pause
     timeout = setTimeout(type, isDeleting.value ? deleteSpeed : typeSpeed)
   }
 
-  onMounted(() => { timeout = setTimeout(type, 500) })
+  onMounted(() => {
+    const stop = watch(
+      () => unref(phrasesSource)?.length > 0,
+      (ready) => {
+        if (ready) {
+          timeout = setTimeout(type, 500)
+          stop()
+        }
+      },
+      { immediate: true }
+    )
+  })
   onUnmounted(() => clearTimeout(timeout))
 
   return { displayText }

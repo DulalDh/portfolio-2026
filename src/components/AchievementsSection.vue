@@ -11,8 +11,11 @@
         <div class="w-16 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 mx-auto mt-4 rounded-full" />
       </div>
 
+      <LoadingSpinner v-if="loading" label="Loading achievements…" />
+      <div v-else-if="error" class="text-center text-red-400 py-12">Failed to load content.</div>
+
       <!-- Achievement cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
         <div
           v-for="(ach, i) in achievements"
           :key="ach.title"
@@ -40,7 +43,7 @@
            in BOTH light and dark modes. The indigo→navy palette is consistent
            with the dark hero and fits as an accent block in light mode too.
       -->
-      <div class="section-reveal relative overflow-hidden rounded-3xl">
+      <div v-if="!loading && !error" class="section-reveal relative overflow-hidden rounded-3xl">
         <!-- Always-dark gradient background — intentional design choice -->
         <div class="absolute inset-0 bg-gradient-to-br from-indigo-900 via-slate-900 to-cyan-900"
              style="background-size:400% 400%; animation: gradientShift 15s ease infinite;" />
@@ -69,5 +72,8 @@
 </template>
 
 <script setup>
-import { achievements, stats } from '../data/portfolio'
+import { usePortfolioData } from '../composables/usePortfolioData'
+import LoadingSpinner from './LoadingSpinner.vue'
+
+const { achievements, stats, loading, error } = usePortfolioData()
 </script>

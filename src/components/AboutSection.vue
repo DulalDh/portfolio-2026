@@ -11,7 +11,10 @@
         <div class="w-16 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 mx-auto mt-4 rounded-full" />
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
+      <LoadingSpinner v-if="loading" label="Loading about section…" />
+      <div v-else-if="error" class="text-center text-red-400 py-12">Failed to load content.</div>
+
+      <div v-else class="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
 
         <!-- Left: Photo -->
         <div class="section-reveal flex justify-center">
@@ -37,7 +40,7 @@
                         dark:bg-gradient-to-br dark:from-indigo-900/60 dark:to-slate-800
                         bg-gradient-to-br from-indigo-100 to-slate-100">
               <img
-                src="/profile-nobg.png"
+                :src="personal.photoUrl || '/profile-nobg.png'"
                 alt="MD. Dulal Hossin"
                 class="w-full h-full object-cover object-top"
                 loading="lazy"
@@ -134,7 +137,10 @@
 </template>
 
 <script setup>
-import { personal } from '../data/portfolio'
+import { usePortfolioData } from '../composables/usePortfolioData'
+import LoadingSpinner from './LoadingSpinner.vue'
+
+const { personal, loading, error } = usePortfolioData()
 
 const infos = [
   { icon: '📍', label: 'Location', value: 'Savar, Dhaka, Bangladesh' },

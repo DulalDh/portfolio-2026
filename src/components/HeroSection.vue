@@ -137,7 +137,7 @@
                         rounded-[2rem] overflow-hidden shadow-2xl
                         ring-2 dark:ring-white/10 ring-indigo-200/60 pulse-glow">
               <img
-                src="/profile-nobg.png"
+                :src="profileSrc"
                 alt="MD. Dulal Hossin — Frontend Team Lead"
                 width="600" height="450"
                 class="w-full h-full object-cover object-top"
@@ -190,12 +190,16 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import { useTypewriter } from '../composables/useTypewriter'
-import { personal, stats } from '../data/portfolio'
+import { usePortfolioData } from '../composables/usePortfolioData'
 
-const { displayText } = useTypewriter(personal.typingPhrases)
+const { personal, stats } = usePortfolioData()
 
-const profileSrc = '/profile-nobg.png'
+const typingPhrases = computed(() => personal.value?.typingPhrases ?? [])
+const { displayText } = useTypewriter(typingPhrases)
+
+const profileSrc = computed(() => personal.value?.photoUrl || '/profile-nobg.png')
 
 const particles = Array.from({ length: 16 }, (_, i) => ({
   id: i,

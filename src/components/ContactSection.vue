@@ -146,9 +146,11 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive, computed } from 'vue'
 import emailjs from '@emailjs/browser'
-import { personal } from '../data/portfolio'
+import { usePortfolioData } from '../composables/usePortfolioData'
+
+const { personal } = usePortfolioData()
 
 const SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
@@ -159,16 +161,16 @@ const errors = reactive({ name: '', email: '', subject: '', message: '' })
 const submitting = ref(false)
 const submitStatus = ref(null) // null | 'success' | 'error'
 
-const contactItems = [
-  { label: 'Email', value: personal.email, href: `mailto:${personal.email}`, icon: '✉️', gradient: 'linear-gradient(135deg,#6366f1,#8b5cf6)' },
-  { label: 'Phone', value: personal.phone, href: `tel:${personal.phone}`, icon: '📱', gradient: 'linear-gradient(135deg,#22d3ee,#3b82f6)' },
-  { label: 'Location', value: personal.location, href: '#', icon: '📍', gradient: 'linear-gradient(135deg,#f59e0b,#ef4444)' },
-]
+const contactItems = computed(() => personal.value ? [
+  { label: 'Email', value: personal.value.email, href: `mailto:${personal.value.email}`, icon: '✉️', gradient: 'linear-gradient(135deg,#6366f1,#8b5cf6)' },
+  { label: 'Phone', value: personal.value.phone, href: `tel:${personal.value.phone}`, icon: '📱', gradient: 'linear-gradient(135deg,#22d3ee,#3b82f6)' },
+  { label: 'Location', value: personal.value.location, href: '#', icon: '📍', gradient: 'linear-gradient(135deg,#f59e0b,#ef4444)' },
+] : [])
 
-const socials = [
-  { label: 'GitHub', icon: '🐙', href: personal.github },
-  { label: 'LinkedIn', icon: '💼', href: personal.linkedin },
-]
+const socials = computed(() => personal.value ? [
+  { label: 'GitHub', icon: '🐙', href: personal.value.github },
+  { label: 'LinkedIn', icon: '💼', href: personal.value.linkedin },
+] : [])
 
 function validate() {
   let valid = true

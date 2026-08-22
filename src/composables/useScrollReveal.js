@@ -2,6 +2,7 @@ import { onMounted, onUnmounted } from 'vue'
 
 export function useScrollReveal(selector = '.section-reveal') {
   let observer
+  let mutationObserver
 
   onMounted(() => {
     observer = new IntersectionObserver(
@@ -24,7 +25,6 @@ export function useScrollReveal(selector = '.section-reveal') {
       }
     )
 
-    // Observe all current + future elements (re-scan on each call)
     const scan = () => {
       document.querySelectorAll(selector).forEach((el) => {
         if (!el.classList.contains('visible')) observer.observe(el)
@@ -33,11 +33,15 @@ export function useScrollReveal(selector = '.section-reveal') {
 
     scan()
 
-    // Re-scan after a short delay to catch elements rendered async (TransitionGroup, etc.)
-    setTimeout(scan, 300)
+    // Content behind async data fetches (Firebase, etc.) can render well after
+    // mount, so keep watching the DOM for newly-inserted .section-reveal nodes
+    // instead of relying on a one-off timed rescan.
+    mutationObserver = new MutationObserver(scan)
+    mutationObserver.observe(document.body, { childList: true, subtree: true })
   })
 
   onUnmounted(() => {
     if (observer) observer.disconnect()
+    if (mutationObserver) mutationObserver.disconnect()
   })
 }

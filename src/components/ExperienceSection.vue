@@ -11,11 +11,14 @@
         <div class="w-16 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 mx-auto mt-4 rounded-full" />
       </div>
 
+      <LoadingSpinner v-if="loading" label="Loading experience…" />
+      <div v-else-if="error" class="text-center text-red-400 py-12">Failed to load content.</div>
+
       <!-- Timeline
            The wrapper is overflow-hidden so the absolute vertical line
            is clipped to this container and never bleeds into adjacent sections.
       -->
-      <div class="relative overflow-hidden">
+      <div v-else class="relative overflow-hidden">
         <!-- Vertical line — left on mobile, centered on sm+ -->
         <div class="absolute left-5 sm:left-1/2 top-0 bottom-0 w-px
                     bg-gradient-to-b from-indigo-500 via-cyan-400 to-transparent
@@ -102,7 +105,7 @@
       </div>
 
       <!-- Education card -->
-      <div class="mt-12 sm:mt-20 section-reveal">
+      <div v-if="education" class="mt-12 sm:mt-20 section-reveal">
         <div class="dark:bg-slate-800/70 bg-white border dark:border-slate-700/50 border-slate-200 rounded-3xl p-6 sm:p-8 shadow-xl text-center relative overflow-hidden">
           <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-cyan-400/5 pointer-events-none" />
           <div class="relative z-10">
@@ -123,5 +126,8 @@
 </template>
 
 <script setup>
-import { experiences, education } from '../data/portfolio'
+import { usePortfolioData } from '../composables/usePortfolioData'
+import LoadingSpinner from './LoadingSpinner.vue'
+
+const { experiences, education, loading, error } = usePortfolioData()
 </script>

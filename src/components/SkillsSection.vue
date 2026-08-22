@@ -35,7 +35,10 @@
         filter change), the observer never re-fires — items would stay invisible.
         The section wrapper above already handles the scroll-in reveal.
       -->
-      <div class="grid sm:grid-cols-2 gap-6 mb-16">
+      <LoadingSpinner v-if="loading" label="Loading skills…" />
+      <div v-else-if="error" class="text-center text-red-400 py-12">Failed to load content.</div>
+
+      <div v-else class="grid sm:grid-cols-2 gap-6 mb-16">
         <TransitionGroup name="skill-fade">
           <div
             v-for="skill in filteredSkills"
@@ -86,7 +89,10 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import { skills as allSkills, skillCategories } from '../data/portfolio'
+import { usePortfolioData, skillCategories } from '../composables/usePortfolioData'
+import LoadingSpinner from './LoadingSpinner.vue'
+
+const { skills: allSkills, loading, error } = usePortfolioData()
 
 const activeCategory = ref('All')
 
@@ -97,8 +103,8 @@ const barsAnimated = ref(false)
 
 const filteredSkills = computed(() =>
   activeCategory.value === 'All'
-    ? allSkills
-    : allSkills.filter(s => s.category === activeCategory.value)
+    ? allSkills.value
+    : allSkills.value.filter(s => s.category === activeCategory.value)
 )
 
 const techStack = [

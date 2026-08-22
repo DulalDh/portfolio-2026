@@ -27,8 +27,11 @@
         </button>
       </div>
 
+      <LoadingSpinner v-if="loading" label="Loading projects…" />
+      <div v-else-if="error" class="text-center text-red-400 py-12">Failed to load content.</div>
+
       <!-- Projects grid -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div v-else class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <TransitionGroup name="project-fade">
           <div
             v-for="project in filteredProjects"
@@ -81,7 +84,7 @@
       </div>
 
       <!-- Empty state -->
-      <div v-if="filteredProjects.length === 0" class="text-center py-20">
+      <div v-if="!loading && !error && filteredProjects.length === 0" class="text-center py-20">
         <div class="text-5xl mb-4">🔍</div>
         <p class="dark:text-slate-400 text-slate-500">No projects in this category yet.</p>
       </div>
@@ -91,14 +94,17 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { projects, projectCategories } from '../data/portfolio'
+import { usePortfolioData, projectCategories } from '../composables/usePortfolioData'
+import LoadingSpinner from './LoadingSpinner.vue'
+
+const { projects, loading, error } = usePortfolioData()
 
 const activeFilter = ref('All')
 
 const filteredProjects = computed(() =>
   activeFilter.value === 'All'
-    ? projects
-    : projects.filter(p => p.category === activeFilter.value)
+    ? projects.value
+    : projects.value.filter(p => p.category === activeFilter.value)
 )
 </script>
 
