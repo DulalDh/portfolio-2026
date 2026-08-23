@@ -76,7 +76,7 @@
           <div>
             <h3 class="text-2xl sm:text-3xl font-black dark:text-white text-slate-900 mb-3">
               Frontend Team Lead &amp;<br />
-              <span class="gradient-text">Vue.js Specialist</span>
+              <span class="gradient-text">Vue/React Specialist</span>
             </h3>
             <p class="dark:text-slate-400 text-slate-600 leading-relaxed text-base sm:text-lg">
               {{ personal.bio }}

@@ -106,8 +106,8 @@
                      dark:hover:bg-white/10 hover:bg-white/80
                      transition-all duration-300 hover:-translate-y-1 text-center"
             >
-              <div class="text-xl sm:text-2xl font-black gradient-text">{{ stat.value }}</div>
-              <div class="dark:text-slate-400 text-slate-600 text-xs mt-0.5 font-medium leading-tight">{{ stat.label }}</div>
+              <div class="text-xl sm:text-2xl font-black gradient-text">{{ stat?.value||"" }}</div>
+              <div class="dark:text-slate-400 text-slate-600 text-xs mt-0.5 font-medium leading-tight">{{ stat?.label||"" }}</div>
             </div>
           </div>
         </div>
@@ -163,7 +163,7 @@
                      rounded-2xl px-3 lg:px-4 py-2 lg:py-3 shadow-xl float-anim"
               style="animation-delay:2s"
             >
-              <div class="text-base lg:text-xl font-black text-emerald-500 dark:text-emerald-400">Vue Lead</div>
+              <div class="text-base lg:text-xl font-black text-emerald-500 dark:text-emerald-400">Team Lead</div>
             </div>
 
             <!-- Tech pill -->
@@ -173,7 +173,7 @@
                      rounded-xl px-2.5 lg:px-3 py-1.5 lg:py-2 shadow-xl float-anim"
               style="animation-delay:1s"
             >
-              <div class="text-xs text-white font-bold whitespace-nowrap">⚡ Vue 2/3</div>
+              <div class="text-xs text-white font-bold whitespace-nowrap">⚡ Vue & React</div>
             </div>
           </div>
         </div>
