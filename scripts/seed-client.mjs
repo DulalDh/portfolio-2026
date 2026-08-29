@@ -53,11 +53,11 @@ const db = getDatabase(app);
 const storage = getStorage(app);
 
 async function uploadProfilePhoto() {
-  const localPath = path.join(__dirname, "..", "public", "profile.jpeg");
+  const localPath = path.join(__dirname, "..", "public", "profile.png");
   const bytes = readFileSync(localPath);
-  const destination = "images/profile.jpeg";
+  const destination = "images/profile.png";
   const ref = storageRef(storage, destination);
-  await uploadBytes(ref, bytes, { contentType: "image/jpeg" });
+  await uploadBytes(ref, bytes, { contentType: "image/png" });
   return getDownloadURL(ref);
 }
 

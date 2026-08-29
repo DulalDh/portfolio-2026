@@ -47,7 +47,7 @@ A modern, fully responsive developer portfolio built with Vue 3, Tailwind CSS v4
 portfolio/
 ├── public/
 │   ├── favicon.svg
-│   └── profile.jpeg        # Profile photo (transparent background)
+│   └── profile.png        # Profile photo (transparent background)
 ├── src/
 │   ├── main.js                 # Vue app entry point
 │   ├── App.vue                 # Root component — mounts all sections

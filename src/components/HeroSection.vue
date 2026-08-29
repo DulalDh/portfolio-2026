@@ -199,7 +199,7 @@ const { personal, stats, heroTagline } = usePortfolioData()
 const typingPhrases = computed(() => personal.value?.typingPhrases ?? [])
 const { displayText } = useTypewriter(typingPhrases)
 
-const profileSrc = computed(() => personal.value?.photoUrl || '/profile.jpeg')
+const profileSrc = computed(() => personal.value?.photoUrl || '/profile.png')
 
 const particles = Array.from({ length: 16 }, (_, i) => ({
   id: i,

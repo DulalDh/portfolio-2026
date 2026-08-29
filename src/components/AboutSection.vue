@@ -40,7 +40,7 @@
                         dark:bg-gradient-to-br dark:from-indigo-900/60 dark:to-slate-800
                         bg-gradient-to-br from-indigo-100 to-slate-100">
               <img
-                :src="personal.photoUrl || '/profile.jpeg'"
+                :src="personal.photoUrl || '/profile.png'"
                 alt="MD. Dulal Hossin"
                 class="w-full h-full object-cover object-top"
                 loading="lazy"
