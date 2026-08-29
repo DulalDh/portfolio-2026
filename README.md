@@ -27,17 +27,17 @@ A modern, fully responsive developer portfolio built with Vue 3, Tailwind CSS v4
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Framework | Vue 3 (Composition API, `<script setup>`) |
-| Build tool | Vite 8 |
-| Styling | Tailwind CSS v4 (Vite plugin) |
-| Routing | Vue Router |
-| Data | Firebase Realtime Database |
-| Animation | GSAP |
-| Email | EmailJS (`@emailjs/browser` v4) |
-| Utilities | VueUse |
-| Testing | Playwright |
+| Layer      | Technology                                |
+| ---------- | ----------------------------------------- |
+| Framework  | Vue 3 (Composition API, `<script setup>`) |
+| Build tool | Vite 8                                    |
+| Styling    | Tailwind CSS v4 (Vite plugin)             |
+| Routing    | Vue Router                                |
+| Data       | Firebase Realtime Database                |
+| Animation  | GSAP                                      |
+| Email      | EmailJS (`@emailjs/browser` v4)           |
+| Utilities  | VueUse                                    |
+| Testing    | Playwright                                |
 
 ---
 
@@ -47,7 +47,7 @@ A modern, fully responsive developer portfolio built with Vue 3, Tailwind CSS v4
 portfolio/
 ├── public/
 │   ├── favicon.svg
-│   └── profile-nobg.png        # Profile photo (transparent background)
+│   └── profile.jpeg        # Profile photo (transparent background)
 ├── src/
 │   ├── main.js                 # Vue app entry point
 │   ├── App.vue                 # Root component — mounts all sections
@@ -172,13 +172,13 @@ The contact form sends emails directly from the browser using [EmailJS](https://
 
 ### Template variables sent by the form
 
-| Variable | Description |
-|---|---|
-| `from_name` | Sender's name |
-| `from_email` | Sender's email address |
-| `subject` | Message subject |
-| `message` | Message body |
-| `reply_to` | Sender's email (sets Reply-To header) |
+| Variable     | Description                           |
+| ------------ | ------------------------------------- |
+| `from_name`  | Sender's name                         |
+| `from_email` | Sender's email address                |
+| `subject`    | Message subject                       |
+| `message`    | Message body                          |
+| `reply_to`   | Sender's email (sets Reply-To header) |
 
 > **Note:** If you see a `Gmail_API: Request had insufficient authentication scopes` error, reconnect your Gmail service in the EmailJS dashboard (Email Services → your service → Reconnect Account) and ensure all OAuth permissions are granted.
 
@@ -196,11 +196,11 @@ Output is written to `dist/`. The build is a standard static site — deploy to 
 
 ### Deployment options
 
-| Platform | Steps |
-|---|---|
-| **Vercel** | Import repo → framework preset: Vite → add env vars → deploy |
-| **Netlify** | Drag & drop `dist/` folder, or connect repo → build command: `npm run build`, publish dir: `dist` → add env vars |
-| **GitHub Pages** | Use `gh-pages` package or GitHub Actions to publish `dist/` |
+| Platform         | Steps                                                                                                            |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Vercel**       | Import repo → framework preset: Vite → add env vars → deploy                                                     |
+| **Netlify**      | Drag & drop `dist/` folder, or connect repo → build command: `npm run build`, publish dir: `dist` → add env vars |
+| **GitHub Pages** | Use `gh-pages` package or GitHub Actions to publish `dist/`                                                      |
 
 > Remember to add your `VITE_EMAILJS_*` and `VITE_FIREBASE_*` environment variables in the hosting platform's dashboard, not just locally in `.env`.
 
@@ -227,10 +227,10 @@ npx playwright test tests/theme.spec.js
 
 ### Test coverage
 
-| File | Tests | What it covers |
-|---|---|---|
-| `theme.spec.js` | 20 | Dark/light toggle, localStorage persistence, no-flash on reload, profile image |
-| `ui-fixes.spec.js` | 30+ | Navbar light mode, achievements banner, 5 responsive viewports |
+| File               | Tests | What it covers                                                                 |
+| ------------------ | ----- | ------------------------------------------------------------------------------ |
+| `theme.spec.js`    | 20    | Dark/light toggle, localStorage persistence, no-flash on reload, profile image |
+| `ui-fixes.spec.js` | 30+   | Navbar light mode, achievements banner, 5 responsive viewports                 |
 
 ---
 
