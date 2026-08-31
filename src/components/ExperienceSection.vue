@@ -20,7 +20,7 @@
       -->
       <div v-else class="relative overflow-hidden">
         <!-- Vertical line — left on mobile, centered on sm+ -->
-        <div class="absolute left-5 sm:left-1/2 top-0 bottom-0 w-px
+        <div class="absolute left-5 sm:left-1/2 top-0 bottom-0 w-0.5
                     bg-gradient-to-b from-indigo-500 via-cyan-400 to-transparent
                     -translate-x-1/2" />
 
