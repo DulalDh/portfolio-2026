@@ -1,6 +1,7 @@
 import { ref } from 'vue'
 import { ref as dbRef, get } from 'firebase/database'
 import { db } from '../firebase'
+import fallbackData from '../../scripts/firebase-import.json'
 
 // local (camelCase) state key -> [firebase path (snake_case), defaultValue]
 const FIELDS = {
@@ -42,17 +43,26 @@ function load() {
   const fetchPath = (path) => get(dbRef(db, path)).then((snap) => snap.val())
 
   ;(async () => {
-    try {
-      const keys = Object.keys(FIELDS)
-      const results = await Promise.all(keys.map((key) => fetchPath(FIELDS[key][0])))
-      keys.forEach((key, i) => {
-        state[key].value = results[i] ?? FIELDS[key][1]
-      })
-    } catch (e) {
-      error.value = e
-    } finally {
-      loading.value = false
+    const keys = Object.keys(FIELDS)
+    const results = await Promise.allSettled(
+      keys.map((key) => fetchPath(FIELDS[key][0]))
+    )
+    let fallbackUsed = false
+
+    results.forEach((result, i) => {
+      const [path, defaultValue] = FIELDS[keys[i]]
+      if (result.status === 'fulfilled' && result.value != null) {
+        state[keys[i]].value = result.value
+      } else {
+        fallbackUsed = true
+        state[keys[i]].value = fallbackData[path] ?? defaultValue
+      }
+    })
+
+    if (fallbackUsed) {
+      console.warn('Some Firebase portfolio data was unavailable; using scripts/firebase-import.json for those fields.')
     }
+    loading.value = false
   })()
 
   return { ...state, loading, error }

@@ -40,7 +40,8 @@
                         dark:bg-gradient-to-br dark:from-indigo-900/60 dark:to-slate-800
                         bg-gradient-to-br from-indigo-100 to-slate-100">
               <img
-                :src="personal.photoUrl || '/profile.png'"
+                :src="personal.photoUrl || fallbackProfileSrc"
+                @error="handleProfileImageError"
                 alt="MD. Dulal Hossin"
                 class="w-full h-full object-cover object-top"
                 loading="lazy"
@@ -139,6 +140,7 @@
 <script setup>
 import { usePortfolioData } from '../composables/usePortfolioData'
 import LoadingSpinner from './LoadingSpinner.vue'
+import { fallbackProfileSrc, handleProfileImageError } from '../composables/useProfileImage'
 
 const { personal, aboutInfo: infos, aboutTags: tags, resumeUrl, loading, error } = usePortfolioData()
 </script>

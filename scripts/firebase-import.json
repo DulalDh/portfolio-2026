@@ -1,0 +1,450 @@
+{
+  "about_info": [
+    {
+      "icon": "📍",
+      "label": "Location",
+      "value": "South Banasree, Dhaka, Bangladesh"
+    },
+    {
+      "icon": "✉️",
+      "label": "Email",
+      "value": "dulaldh.cse@gmail.com"
+    },
+    {
+      "icon": "📱",
+      "label": "Phone",
+      "value": "+8801751341563"
+    },
+    {
+      "icon": "🎓",
+      "label": "Degree",
+      "value": "BSc in CSE — HSTU"
+    }
+  ],
+  "about_tags": [
+    "Vue.js/React.js Expert",
+    "Team Leadership",
+    "CI/CD Automation",
+    "Playwright Testing",
+    "Agile/Scrum",
+    "Performance Optimization",
+    "Code Review",
+    "Mentorship"
+  ],
+  "achievements": [
+    {
+      "description": "Awarded for exceptional performance and contributions at BluBird Interactive Ltd",
+      "icon": "🏆",
+      "period": "Oct 2023 – Mar 2024",
+      "title": "Stellar Performance Award"
+    },
+    {
+      "description": "Won first place at the District Science Fair for an innovative tech project",
+      "icon": "🥇",
+      "period": "2019",
+      "title": "1st Place – District Science Fair"
+    },
+    {
+      "description": "Solved over 300 problems across competitive programming platforms including Codeforces and LeetCode",
+      "icon": "💻",
+      "period": "Ongoing",
+      "title": "300+ Programming Problems"
+    },
+    {
+      "description": "Served as Joint Secretary of the university CSE Student Association, organizing tech events",
+      "icon": "🎓",
+      "period": "2017 – 2019",
+      "title": "Joint Secretary – CSE Student Association"
+    }
+  ],
+  "education": {
+    "cgpa": "3.13 / 4.00",
+    "degree": "Bachelor of Science in Computer Science & Engineering",
+    "institution": "Hajee Mohammad Danesh Science and Technology University",
+    "location": "Dinajpur, Bangladesh",
+    "period": "2014 – 2019"
+  },
+  "experiences": [
+    {
+      "color": "#6366f1",
+      "company": "BluBird Interactive Ltd",
+      "duration": "3+ years",
+      "highlights": [
+        "Lead a team of Vue.js/React.js developers, mentoring and conducting code reviews",
+        "Engineered automated development pipeline managing full SDLC with Claude CLI",
+        "Achieved 50% reduction in feature delivery time through innovative workflows",
+        "Reduced production bugs by 40% via Playwright end-to-end testing integration",
+        "Architected scalable frontend solutions for enterprise-level applications"
+      ],
+      "period": "July 2022 – May 2026",
+      "role": "Software Engineer (Frontend Team Lead)",
+      "tech": [
+        "Vue & React",
+        "Pinia & Vuex",
+        "Tailwind CSS",
+        "Playwright",
+        "Claude CLI"
+      ],
+      "type": "Full-time"
+    },
+    {
+      "color": "#22d3ee",
+      "company": "Swosti Limited",
+      "duration": "11 months",
+      "highlights": [
+        "Developed FinTech SaaS applications using Vue 3 Composition API",
+        "Built complex financial dashboards with real-time data visualization",
+        "Optimized data processing modules achieving 15% speed improvement",
+        "Implemented micro-finance loan and savings workflow systems"
+      ],
+      "period": "August 2021 – June 2022",
+      "role": "Software Engineer",
+      "tech": [
+        "Vue 3",
+        "Vuex",
+        "REST API",
+        "Chart.js",
+        "Bootstrap"
+      ],
+      "type": "Full-time"
+    },
+    {
+      "color": "#f59e0b",
+      "company": "Rigg Technologies, Ltd",
+      "duration": "1 year 9 months",
+      "highlights": [
+        "Developed Queue Management System with real-time monitoring",
+        "Reduced average customer wait time by 15% through UI/UX improvements",
+        "Built multi-branch support system with live analytics dashboard",
+        "Contributed to system architecture decisions and database design"
+      ],
+      "period": "November 2019 – July 2021",
+      "role": "Jr. Software Engineer",
+      "tech": [
+        "Vue.js",
+        "JavaScript",
+        "WebSocket",
+        "MySQL",
+        "Laravel"
+      ],
+      "type": "Full-time"
+    }
+  ],
+  "footer_tagline": "Frontend Team Lead specializing in Vue.js/React.js. Building scalable, high-performance web applications with modern tooling.",
+  "hero_tagline": "6+ years crafting high-performance Vue.js/React.js applications. Team lead who turns complex problems into elegant, automated solutions.",
+  "nav_links": [
+    {
+      "href": "#about",
+      "label": "About"
+    },
+    {
+      "href": "#skills",
+      "label": "Skills"
+    },
+    {
+      "href": "#experience",
+      "label": "Experience"
+    },
+    {
+      "href": "#projects",
+      "label": "Projects"
+    },
+    {
+      "href": "#contact",
+      "label": "Contact"
+    }
+  ],
+  "personal": {
+    "bio": "Frontend Team Lead with 6+ years of experience specializing in Vue.js/React.js. Known for designing automation pipelines and achieving a 50% reduction in feature delivery time through innovative workflows. Passionate about clean architecture, performance, and team growth.",
+    "email": "dulaldh.cse@gmail.com",
+    "github": "https://github.com/DulalDh",
+    "linkedin": "https://www.linkedin.com/in/DulalDh",
+    "location": "South Banasree, Dhaka, Bangladesh",
+    "name": "MD. Dulal Hossin",
+    "phone": "+8801751341563",
+    "photoUrl": "https://lh3.googleusercontent.com/d/1X6IOMs-E6i44zvDOonu_kMJHmgDTcKsz",
+    "subtitle": "Vue.js/React.js Specialist & Automation Engineer",
+    "title": "Frontend Team Lead",
+    "typingPhrases": [
+      "Frontend Team Lead",
+      "Vue.js/React.js Specialist",
+      "Automation Engineer",
+      "UI/UX Enthusiast",
+      "Problem Solver"
+    ]
+  },
+  "project_categories": [
+    "All",
+    "Enterprise",
+    "FinTech",
+    "E-commerce",
+    "EdTech"
+  ],
+  "projects": [
+    {
+      "category": "Enterprise",
+      "description": "Enterprise real estate platform with dynamic forms, role-based dashboards, and property management workflows for brokers and agents.",
+      "features": [
+        "Dynamic form builder",
+        "Role-based access",
+        "Real-time dashboards",
+        "Property analytics"
+      ],
+      "gradient": "from-indigo-500 to-purple-600",
+      "icon": "🏠",
+      "tech": [
+        "Vue 3",
+        "Pinia",
+        "Tailwind CSS",
+        "REST API"
+      ],
+      "title": "My Broker Cloud"
+    },
+    {
+      "category": "E-commerce",
+      "description": "Full-featured e-commerce admin dashboard with inventory management, order tracking, and sales analytics for Bangladeshi merchants.",
+      "features": [
+        "Inventory management",
+        "Order tracking",
+        "Sales reports",
+        "Multi-vendor support"
+      ],
+      "gradient": "from-cyan-500 to-blue-600",
+      "icon": "🛒",
+      "tech": [
+        "Vue 3 & React.js",
+        "Vuex",
+        "Chart.js",
+        "Tailwind CSS"
+      ],
+      "title": "DeshiCommerce"
+    },
+    {
+      "category": "FinTech",
+      "description": "Micro-finance platform supporting loan origination, savings management, and repayment workflows for underbanked communities.",
+      "features": [
+        "Loan management",
+        "Savings workflows",
+        "Repayment tracking",
+        "Branch reporting"
+      ],
+      "gradient": "from-emerald-500 to-teal-600",
+      "icon": "💰",
+      "tech": [
+        "Vue 3",
+        "REST API",
+        "Chart.js",
+        "Bootstrap"
+      ],
+      "title": "Swosti MFI247"
+    },
+    {
+      "category": "Enterprise",
+      "description": "Real-time queue monitoring system with multi-branch support, live analytics, and customer flow optimization.",
+      "features": [
+        "Real-time monitoring",
+        "Multi-branch support",
+        "Analytics dashboard",
+        "SMS notifications"
+      ],
+      "gradient": "from-orange-500 to-red-600",
+      "icon": "📊",
+      "tech": [
+        "Vue.js",
+        "WebSocket",
+        "Laravel",
+        "MySQL"
+      ],
+      "title": "Queue Management System"
+    },
+    {
+      "category": "EdTech",
+      "description": "Online testing platform for university admission preparation with adaptive quizzes, performance analytics, and study materials.",
+      "features": [
+        "Adaptive quizzes",
+        "Performance tracking",
+        "Leaderboards",
+        "Study analytics"
+      ],
+      "gradient": "from-pink-500 to-rose-600",
+      "icon": "📚",
+      "tech": [
+        "Vue.js",
+        "Node.js",
+        "MongoDB",
+        "REST API"
+      ],
+      "title": "Ultimate Admission"
+    },
+    {
+      "category": "FinTech",
+      "description": "Digital payment system with peer-to-peer transfers, transaction history, and secure wallet management features.",
+      "features": [
+        "P2P transfers",
+        "Transaction history",
+        "Wallet management",
+        "Security features"
+      ],
+      "gradient": "from-violet-500 to-purple-700",
+      "icon": "💳",
+      "tech": [
+        "Vue 3",
+        "Pinia",
+        "REST API",
+        "Tailwind CSS"
+      ],
+      "title": "e-Wallet"
+    }
+  ],
+  "resume_url": "https://docs.google.com/document/d/14IVCB4fYXiCWtjZge3u18209w2D3yWUBY2_mGHTd10E/export?format=pdf",
+  "skill_categories": [
+    "All",
+    "Frontend",
+    "Backend",
+    "Testing",
+    "DevOps"
+  ],
+  "skills": [
+    {
+      "category": "Frontend",
+      "icon": "⚡",
+      "level": 95,
+      "name": "Vue.js / Vue 3"
+    },
+    {
+      "category": "Frontend",
+      "icon": "🟨",
+      "level": 92,
+      "name": "JavaScript (ES6+)"
+    },
+    {
+      "category": "Frontend",
+      "icon": "🎨",
+      "level": 90,
+      "name": "Tailwind CSS"
+    },
+    {
+      "category": "Frontend",
+      "icon": "🔷",
+      "level": 78,
+      "name": "TypeScript"
+    },
+    {
+      "category": "Frontend",
+      "icon": "🚀",
+      "level": 75,
+      "name": "React.js"
+    },
+    {
+      "category": "Backend",
+      "icon": "🔗",
+      "level": 88,
+      "name": "REST APIs"
+    },
+    {
+      "category": "Testing",
+      "icon": "🧪",
+      "level": 82,
+      "name": "Playwright Testing"
+    },
+    {
+      "category": "Frontend",
+      "icon": "🗂️",
+      "level": 90,
+      "name": "State Management (Pinia/Vuex)"
+    },
+    {
+      "category": "DevOps",
+      "icon": "🤖",
+      "level": 85,
+      "name": "Claude CLI / AI Automation"
+    },
+    {
+      "category": "DevOps",
+      "icon": "🌿",
+      "level": 88,
+      "name": "Git & Version Control"
+    }
+  ],
+  "social_links": [
+    {
+      "href": "https://github.com/DulalDh",
+      "icon": "🐙",
+      "label": "GitHub"
+    },
+    {
+      "href": "https://www.linkedin.com/in/DulalDh",
+      "icon": "💼",
+      "label": "LinkedIn"
+    },
+    {
+      "href": "mailto:dulaldh.cse@gmail.com",
+      "icon": "✉️",
+      "label": "Email"
+    }
+  ],
+  "stats": [
+    {
+      "label": "Years Experience",
+      "value": "6+"
+    },
+    {
+      "label": "Faster Delivery",
+      "value": "50%"
+    },
+    {
+      "label": "Faster Delivery",
+      "value": "40%"
+    }
+  ],
+  "tech_stack": [
+    {
+      "icon": "⚡",
+      "name": "Vue 3"
+    },
+    {
+      "icon": "🟨",
+      "name": "JavaScript"
+    },
+    {
+      "icon": "🔷",
+      "name": "TypeScript"
+    },
+    {
+      "icon": "🎨",
+      "name": "Tailwind"
+    },
+    {
+      "icon": "🚀",
+      "name": "React.js"
+    },
+    {
+      "icon": "🍍",
+      "name": "Pinia"
+    },
+    {
+      "icon": "⚡",
+      "name": "Vite"
+    },
+    {
+      "icon": "🎭",
+      "name": "Playwright"
+    },
+    {
+      "icon": "🌿",
+      "name": "Git"
+    },
+    {
+      "icon": "🔗",
+      "name": "REST API"
+    },
+    {
+      "icon": "🤖",
+      "name": "Claude AI"
+    },
+    {
+      "icon": "💻",
+      "name": "VS Code"
+    }
+  ]
+}

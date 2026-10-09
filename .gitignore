@@ -26,3 +26,4 @@ dist-ssr
 .env.local
 serviceAccountKey.json
 firebase-import.json
+!scripts/firebase-import.json
