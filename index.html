@@ -13,12 +13,12 @@
     <!--
       Inline theme script — runs synchronously before the browser paints anything.
       This eliminates any flash of the wrong theme on reload.
-      Default is dark when no preference is stored.
+      Default is light when no preference is stored.
     -->
     <script>
       ;(function () {
         var stored = localStorage.getItem('theme')
-        var dark = stored ? stored === 'dark' : true
+        var dark = stored ? stored === 'dark' : false
         if (dark) {
           document.documentElement.classList.add('dark')
         } else {
