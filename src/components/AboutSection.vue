@@ -66,8 +66,7 @@
                      rounded-2xl px-3 py-2 shadow-xl float-anim z-10"
               style="animation-delay:2s"
             >
-              <div class="text-xl sm:text-2xl font-black text-emerald-400">7</div>
-              <div class="text-xs dark:text-slate-400 text-slate-500 font-medium">Team Size</div>
+              <div class="text-xs dark:text-slate-400 text-slate-500 font-medium">Team Lead</div>
             </div>
           </div>
         </div>

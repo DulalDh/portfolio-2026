@@ -74,16 +74,19 @@
         "Engineered automated development pipeline managing full SDLC with Claude CLI",
         "Achieved 50% reduction in feature delivery time through innovative workflows",
         "Reduced production bugs by 40% via Playwright end-to-end testing integration",
-        "Architected scalable frontend solutions for enterprise-level applications"
+        "Architected scalable frontend solutions for enterprise-level applications",
+        "Resolved memory leaks, reducing usage from 2 GB to under 500 MB, and fixed JavaScript heap memory limit issues using AI-assisted debugging"
       ],
       "period": "July 2022 – May 2026",
       "role": "Software Engineer (Frontend Team Lead)",
       "tech": [
         "Vue & React",
         "Pinia & Vuex",
-        "Tailwind CSS",
+        "Redux & Zustand",
+        "REST API",
+        "Tailwind CSS & Bootstrap",
         "Playwright",
-        "Claude CLI"
+        "Claude Code"
       ],
       "type": "Full-time"
     },
@@ -155,7 +158,7 @@
     }
   ],
   "personal": {
-    "bio": "Frontend Team Lead with 6+ years of experience specializing in Vue.js/React.js. Known for designing automation pipelines and achieving a 50% reduction in feature delivery time through innovative workflows. Passionate about clean architecture, performance, and team growth.",
+    "bio": "Frontend Team Lead with 6+ years of experience specializing in Vue.js/React.js. Skilled in AI-assisted debugging, resolving memory leaks (reducing usage from 2 GB to under 500 MB), and fixing JavaScript heap memory limit issues. Known for building automation pipelines and reducing feature delivery time by 50%. Passionate about clean architecture, performance, and team growth.",
     "email": "dulaldh.cse@gmail.com",
     "github": "https://github.com/DulalDh",
     "linkedin": "https://www.linkedin.com/in/DulalDh",
@@ -296,7 +299,7 @@
       "title": "e-Wallet"
     }
   ],
-  "resume_url": "https://docs.google.com/document/d/14IVCB4fYXiCWtjZge3u18209w2D3yWUBY2_mGHTd10E/export?format=pdf",
+  "resume_url": "https://docs.google.com/document/d/13a8UMMlGCgU-cuE1NzjrZlVWfhHiwDTL4cQXB7Qz13g/export?format=pdf",
   "skill_categories": [
     "All",
     "Frontend",
