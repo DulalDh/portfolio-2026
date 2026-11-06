@@ -78,7 +78,7 @@
         "Resolved memory leaks, reducing usage from 2 GB to under 500 MB, and fixed JavaScript heap memory limit issues using AI-assisted debugging"
       ],
       "period": "July 2022 – May 2026",
-      "role": "Software Engineer (Frontend Team Lead)",
+      "role": "Software Engineer (Team Lead)",
       "tech": [
         "Vue & React",
         "Pinia & Vuex",
@@ -133,8 +133,8 @@
       "type": "Full-time"
     }
   ],
-  "footer_tagline": "Frontend Team Lead specializing in Vue.js/React.js. Building scalable, high-performance web applications with modern tooling.",
-  "hero_tagline": "6+ years crafting high-performance Vue.js/React.js applications. Team lead who turns complex problems into elegant, automated solutions.",
+  "footer_tagline": "Team Lead specializing in Vue.js/React.js. Building scalable, high-performance web applications with modern tooling.",
+  "hero_tagline": "5+ years crafting high-performance Vue.js/React.js applications. Team lead who turns complex problems into elegant, automated solutions.",
   "nav_links": [
     {
       "href": "#about",
@@ -158,7 +158,7 @@
     }
   ],
   "personal": {
-    "bio": "Frontend Team Lead with 6+ years of experience specializing in Vue.js/React.js. Skilled in AI-assisted debugging, resolving memory leaks (reducing usage from 2 GB to under 500 MB), and fixing JavaScript heap memory limit issues. Known for building automation pipelines and reducing feature delivery time by 50%. Passionate about clean architecture, performance, and team growth.",
+    "bio": "Team Lead with 5+ years of experience specializing in Vue.js/React.js. Skilled in AI-assisted debugging, resolving memory leaks (reducing usage from 2 GB to under 500 MB), and fixing JavaScript heap memory limit issues. Known for building automation pipelines and reducing feature delivery time by 50%. Passionate about clean architecture, performance, and team growth.",
     "email": "dulaldh.cse@gmail.com",
     "github": "https://github.com/DulalDh",
     "linkedin": "https://www.linkedin.com/in/DulalDh",
@@ -167,9 +167,9 @@
     "phone": "+8801751341563",
     "photoUrl": "https://lh3.googleusercontent.com/d/1X6IOMs-E6i44zvDOonu_kMJHmgDTcKsz",
     "subtitle": "Vue.js/React.js Specialist & Automation Engineer",
-    "title": "Frontend Team Lead",
+    "title": "Team Lead",
     "typingPhrases": [
-      "Frontend Team Lead",
+      "Team Lead",
       "Vue.js/React.js Specialist",
       "Automation Engineer",
       "UI/UX Enthusiast",
@@ -336,7 +336,7 @@
       "category": "Frontend",
       "icon": "🚀",
       "level": 75,
-      "name": "React.js"
+      "name": "React.js / Next.js"
     },
     {
       "category": "Backend",
@@ -354,7 +354,7 @@
       "category": "Frontend",
       "icon": "🗂️",
       "level": 90,
-      "name": "State Management (Pinia/Vuex)"
+      "name": "State Management (Pinia/Vuex/Redux)"
     },
     {
       "category": "DevOps",
@@ -389,7 +389,7 @@
   "stats": [
     {
       "label": "Years Experience",
-      "value": "6+"
+      "value": "5+"
     },
     {
       "label": "Faster Delivery",
@@ -419,11 +419,11 @@
     },
     {
       "icon": "🚀",
-      "name": "React.js"
+      "name": "React.js/Next.js"
     },
     {
       "icon": "🍍",
-      "name": "Pinia"
+      "name": "Pinia/Redux"
     },
     {
       "icon": "⚡",

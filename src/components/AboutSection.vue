@@ -54,7 +54,7 @@
                         glass dark:bg-slate-800/90 bg-white/90
                         dark:border-white/10 border-slate-200 border
                         rounded-2xl px-3 py-2 shadow-xl float-anim z-10">
-              <div class="text-xl sm:text-2xl font-black gradient-text">6+</div>
+              <div class="text-xl sm:text-2xl font-black gradient-text">5+</div>
               <div class="text-xs dark:text-slate-400 text-slate-500 font-medium">Years Exp.</div>
             </div>
 
@@ -75,7 +75,7 @@
         <div class="section-reveal space-y-5 sm:space-y-6">
           <div>
             <h3 class="text-2xl sm:text-3xl font-black dark:text-white text-slate-900 mb-3">
-              Frontend Team Lead &amp;<br />
+              Team Lead &amp;<br />
               <span class="gradient-text">Vue/React Specialist</span>
             </h3>
             <p class="dark:text-slate-400 text-slate-600 leading-relaxed text-base sm:text-lg">
