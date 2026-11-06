@@ -152,7 +152,7 @@
                         glass dark:bg-slate-900/80 bg-white/90
                         border dark:border-white/15 border-slate-200
                         rounded-2xl px-3 lg:px-4 py-2 lg:py-3 shadow-xl float-anim">
-              <div class="text-lg lg:text-xl font-black gradient-text">6+</div>
+              <div class="text-lg lg:text-xl font-black gradient-text">5+</div>
               <div class="text-xs dark:text-slate-300 text-slate-500 font-medium">Years Exp.</div>
             </div>
 
